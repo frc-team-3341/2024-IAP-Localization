@@ -38,6 +38,9 @@ public class driveToTag extends Command {
     boolean fieldRelative = false;
     
     // Drive the swerve drive system
+    //Translation2d(0 ,0) - distances in the (x, y) direction the robot needs to travel to get to position
+    //Second Parameter is the rotation needed - right now we are testing just 90 degrees
+    //we will use the Tx from limelight helpers class for rotation
     swerve.drive(new Translation2d(0 ,0), 90*Math.PI/180, false, false);
   }
 
