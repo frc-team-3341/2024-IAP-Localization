@@ -74,7 +74,7 @@ public class RobotContainer {
   private SwerveTeleop teleop;
   // Empty CrabDrive object
   private CrabDrive crabDrive;
-
+  private driveToTag driveToTag;
 
   // Field centric toggle - true for field centric, false for robot centric
   private boolean fieldCentricToggle = true;
@@ -84,7 +84,7 @@ public class RobotContainer {
 
     // Construct swerve subsystem with appropriate modules - DO NOT REMOVE THIS
     this.constructSwerve();
-
+    this.driveToTag = new driveToTag(swerve);
     // Create swerve commands - DO NOT REMOVE THIS
     this.createSwerveCommands();
 
@@ -194,8 +194,7 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return null;
-    
+    return driveToTag;
   }
 
 
